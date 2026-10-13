@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Навчальний сайт про методології розробки програмного забезпечення
+    ">
+    <meta name="author" content="Клочкова Крістіна">
+    <title>Ресурси та глосарій - Методології розробки ПЗ</title>
+
+<link rel="icon" type="image/jpeg" href="/img/favicon.ico.ico">
+
+<meta property="og:title" content="Методологія розробки програмного забезпечення">
+<meta property="og:description" content="Навчальний проєкт з дисципліни ВТВД.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://your-website.com">
+<meta property="og:url" content="https://your-website.com">
+
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    <header>
+        
+    <button type="button" type="submit" class="btn class=theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Переключити тему"> Змінити тему
+    </button>
+
+    <script>
+    function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark-theme');
+  
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+    (function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark-theme');
+  }
+})();
+    </script>
+
+    <nav class="menu">
+    <ul>
+        <li class="menu__item">
+            <a href="../index.html" class="menu__link">Головна</a>
+        </li>
+
+        <li class="menu__item">
+            <a href="../about.html" class="menu__link">Про напрям</a>
+        </li>
+
+        <li class="menu__item">
+            <a href="resources.html" class="menu__link" aria-current="page">Ресурси</a>
+        </li>
+
+        <li class="menu__item">
+            <a href="../comparison.html" class="menu__link">Порівняння методологій</a>
+        </li>
+
+        <li class="menu__item">
+            <a href="../gallery.html" class="menu__link">Медіагалерея</a>
+        </li>
+
+        <li class="menu__item">
+            <a href="../contacts.html" class="menu__link">Контакти</a>
+        </li>
+
+        <li class="menu__item">
+            <a href="../application.html" class="menu__link">Заява на участь у навчальному проєкті з алгоритмів</a>
+        </li>
+    </ul>
+    </nav>
+    </header>
+
+ <main>
+    <h1>Ресурси</h1>
+
+    <h2>Порядок опанування теми</h2>
+    <ol> 
+        <li>Вивчити базові поняття та життєвий цикл ПЗ</li>
+        <li>Розібратися з принципами Agile-маніфесту</li>
+        <li>Опанувати фреймворк Scrum та його артефакти</li>
+        <li>Дослідити практику візуалізації задач у Kanban</li>
+        <li>Порівняти гнучкі підходи з каскадною моделлю</li>
+    </ol>
+
+    <h2>Класифікація</h2>
+    <ul> 
+        <li>Гнучкі методології (Agile)
+            <ul> 
+                <li>Scrum</li>
+                <li>Kanban</li>
+                <li>Extreme Programming (XP)</li>
+            </ul>
+        </li>
+        <li>Традиційні методології
+            <ul>
+                <li>Каскадна модель (Waterfall)</li>
+                <li>V-модель</li>
+                <li>Ітеративна модель</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Глосарій</h2>
+        <article>
+        <h3>Спринт</h3>
+        <p>Фіксований проміжок часу (від 1 до 4 тижнів), протягом якого створюється робоча версія продукту.</p>
+        </article>
+
+        <dl>
+        <dt>Беклог продукту</dt>
+        <dd>Пріоритезований список усіх вимог, функцій та завдань, які необхідно виконати в проекті.</dd>
+
+        <dt>Скрам-майстер</dt>
+        <dd>Фахівець, який допомагає команді ефективно взаємодіяти та усуває перешкоди в процесі розробки.</dd>
+
+        <dt>Канабан-дошка</dt>
+        <dd>Інструмент візуалізації робочого процесу, що ділить завдання на колонки за етапами виконання.</dd>
+
+        <dt>Інкремент</dt>
+        <dd>Повністю готова, протестована та працездатна частина програмного забезпечення, створена за спринт.</dd>
+    </dl>
+
+    <h2>Часті питання</h2>
+        <details>
+    <summary>Що таке семантичний HTML?</summary>
+    <p>Це використання тегів, які чітко описують їхній вміст та призначення (наприклад, main, header, footer) для покращення вебдоступності.</p>
+        </details>
+
+        <details>
+    <summary>Навіщо потрібен атрибут scope в таблицях?</summary>
+    <p>Він допомагает скрінрідерам правильно пов'язувати ячейки даних із відповідними заголовками стовпчиків або рядків.</p>
+        </details>
+
+        <details>
+    <summary>Яка різниця між тегами section та article?</summary>
+    <p>Тег article використовується для повністю самостійного контенту, який має сенс навіть окремо від сайту (наприклад, стаття чи термін глосарію). Тег section просто групує тематично пов'язаний вміст сторінки (наприклад, розділ контактів чи історії).</p>
+        </details>
+
+        <details>
+    <summary>Чому важливо валідувати HTML-код на сайті W3C?</summary>
+    <p>Валідація допомагає знайти приховані синтаксичні помилки (наприклад, незакриті теги або неправильну вкладеність), які можуть порушити відображення сайту в різних браузерах та заважати правильній роботі екранних зчитувачів.</p>
+        </details>
+
+    <h2>Корисні джерела</h2>
+    <ul>
+        <li><a href="https://agilemanifesto.org" target="_blank" rel="noopener">Маніфест гнучкої розробки програмного забезпечення</a></li>
+        <li><a href="https://scrumguides.org" target="_blank" rel="noopener">Офіційний посібник із фреймворку Scrum Guide</a></li>
+        <li><a href="https://atlassian.com" target="_blank" rel="noopener">Практичний посібник з Agile від Atlassian</a></li>
+        <li><a href="https://scrumalliance.org" target="_blank" rel="noopener">Міжнародна спільнота Scrum Alliance</a></li>
+        <li><a href="https://projectmanagement.com" target="_blank" rel="noopener">Портал професійного управління проектами ProjectManagement</a></li>
+    </ul>
+ </main>
+
+    <footer>
+        <address>
+            Клочкова Крістіна, група ІНЖ-21<br>
+            <a href="mailto:your.email@example.com">klochkova2607@gmail.com</a><br>
+            <a href="tel:+380671234567">+38 (067) 199-81-10</a>
+        </address>
+        <p>&copy; 2026 Клочкова Крістіна</p>
+    </footer>
+</body>
+</html>

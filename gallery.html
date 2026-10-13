@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="uk">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Навчальний сайт про методології розробки програмного забезпечення">
+    <meta name="author" content="Клочкова Крістіна">
+    <title>Методології розробки програмного забезпечення - навчальний сайт</title>
+    
+<link rel="icon" type="image/jpeg" href="img/favicon.ico.ico">
+
+<meta property="og:title" content="Методологія розробки програмного забезпечення">
+<meta property="og:description" content="Навчальний проєкт з дисципліни ВТВД.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://your-website.com">
+<meta property="og:url" content="https://your-website.com">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header>
+        
+    <button type="button" type="submit" class="btn class=theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Переключити тему"> Змінити тему
+    </button>
+
+    <script>
+    function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark-theme');
+  
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+    (function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark-theme');
+  }
+})();
+    </script>
+
+        <nav class="menu">
+            <ul>
+                <li class="menu__item">
+                    <a href="index.html" class="menu__link" aria-current="page">Головна</a>
+                </li>
+                <li class="menu__item">
+            <a href="about.html" class="menu__link">Про напрям</a>
+        </li>
+        <li class="menu__item">
+            <a href="pages/resources.html" class="menu__link">Ресурси</a>
+        </li>
+        <li class="menu__item">
+            <a href="../comparison.html" class="menu__link">Порівняння методологій</a>
+        </li>
+        <li class="menu__item">
+            <a href="gallery.html" class="menu__link">Медіагалерея</a>
+        </li>
+        <li class="menu__item">
+            <a href="contacts.html" class="menu__link">Контакти</a>
+        </li>
+        <li class="menu__item">
+            <a href="application.html" class="menu__link">Заява на участь у навчальному проєкті з алгоритмів</a>
+        </li>
+    </ul>
+    </nav>
+    </header>
+    
+<main>
+    <h1>Медіагалерея</h1>
+    <h2>Ілюстрації до теми</h2>
+<figure>  
+    <picture>
+    <img src="img/photo-1.jpg.jpg" alt="Група людей, які навчаються або користуються ноутбуками" width="1200" height="800">
+    <figcaption><em>Автор: Annie Spratt</em>, Unsplash Licence</figcaption>
+    </picture>
+</figure>
+
+<figure>
+    <img src="img/photo-2.jpg.jpg" alt="Чоловік, який працює за комп'ютером" width="1200" height="1800" loading="lazy">
+    <figcaption><em>Автор: Arif Riyanto</em>, Unsplash Licence</figcaption>
+</figure>
+
+<figure>
+    <img src="img/photo-3.jpg.jpg" alt="Робоче місце з відкритим кодом на екрані монітора" width="1200" height="800" loading="lazy">
+    <figcaption><em>Автор: Chris Ried Unsplash</em>, Unsplash Licence</figcaption>
+</figure>
+
+<figure>
+    <img src="img/photo-4.jpg.jpg" alt="" width="1200" height="800" loading="lazy">
+</figure>
+
+<figure>
+    <img src="img/photo-5.jpg.jpg" alt="Схема етапів роботи алгоритму сортування" width="1200" height="800" loading="lazy">
+    <figcaption> Команда розробників працює над проектом, використовуючи методологію Scrum. </figcaption>
+</figure>
+
+    <a href="pages/resources.html">
+        <img src="img/photo-6.jpg.jpg" alt="Перейти до розділу «Ресурси»" width="1200" height="800" loading="lazy">
+    </a>
+
+    <h2>Векторна графіка</h2>
+        <img src="img/icon.svg.svg" alt="Піктограма html" width="100" height="100">
+    
+    <h2>Відео</h2>
+<video controls width="640" preload="metadata">
+    <source src="video/demo.mp4" type="video/mp4">
+    <track src="video/demo-uk.vtt" kind="subtitles" srclang="uk" label="Українські субтитри" default>
+    <track src="video/demo-description-uk.vtt" kind="subtitles" srclang="uk" label="Українські (з описом )">
+    Ваш браузер не підтримує відтворення відео.
+    <a href="video/demo.mp4">Завантажити файл</a>
+</video>
+
+    <h2>Вбудована карта</h2>
+    <iframe width="425" height="350"
+    title="Карта розташування університету"
+    src="https://www.openstreetmap.org/export/embed?bbox=30.737895369529724%2C46.47912386874197%2C30.74154317378998%2C46.48108167431686&amp;layer=mapnik" style="border: 1px solid black"></iframe><small><a href="https://www.openstreetmap.org/#map=18/46.480103/30.739719">Переглянути на карті</a></small>
+</main>    
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html> 
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Навчальний сайт про методології розробки програмного забезпечення">
+    <meta name="author" content="Клочкова Крістіна">
+    <title>Методології розробки програмного забезпечення - навчальний сайт</title>
+    
+<link rel="icon" type="image/jpeg" href="img/favicon.ico.ico">
+
+<meta property="og:title" content="Методологія розробки програмного забезпечення">
+<meta property="og:description" content="Навчальний проєкт з дисципліни ВТВД.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://your-website.com">
+<meta property="og:url" content="https://your-website.com">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header>
+
+    <button type="button" type="submit" class="btn class=theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Переключити тему"> Змінити тему
+    </button>
+
+    <script>
+    function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark-theme');
+  
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+    (function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark-theme');
+  }
+})();
+    </script>
+
+   <nav class="menu">
+            <ul>
+                <li class="menu__item">
+                    <a href="index.html" class="menu__link" aria-current="page">Головна</a>
+                </li>
+                <li class="menu__item">
+                    <a href="about.html" class="menu__link">Про напрям</a>
+                </li>
+                <li class="menu__item">
+                    <a href="pages/resources.html" class="menu__link">Ресурси</a>
+                </li>
+                <li class="menu__item">
+                    <a href="../comparison.html" class="menu__link">Порівняння методологій</a>
+                </li>
+                <li class="menu__item">
+                    <a href="gallery.html" class="menu__link">Медіагалерея</a>
+                </li>
+                <li class="menu__item">
+                    <a href="contacts.html" class="menu__link">Контакти</a>
+                </li>
+                <li class="menu__item">
+                    <a href="application.html" class="menu__link">Заява на участь у навчальному проєкті з алгоритмів</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<main> 
+    <h1>Заявка на участь у  проєкті </h1>
+
+    <form action="https://httpbin.org/post" method="post" 
+    enctype="multipart/form-data"> 
+
+    <fieldset>
+        <legend>Відомості про учасника</legend>
+
+        <label for="fullname">Прізвище та ім'я</label>
+        <input type="text" id="fullname" name="fullname" autocomplete="name" minlength="5" maxlength="100" required>
+        <br><br>
+
+    <label for="email">Електронна пошта</label>
+    <input type="email" id="email" name="email" autocomplete="email" required>
+    <br><br>
+
+    <label for="phone">Телефон</label>
+    <input type="tel" id="phone" name="phone" autocomplete="tel"
+    pattern="\+380[0-9]{9}" 
+    title="+380XXXXXXXXX" required>
+    <br><br>
+
+    <label for="course">Курс навчання</label>
+    <input type="number" id="course" name="course" min="1" max="4" step="1" required>
+    <br><br>
+
+    <label for="start_date">Дата початку участі</label>
+    <input type="date" id="start_date" name="start_date" min="2026-09-26" required>
+    <br><br>
+</fieldset>
+
+<fieldset>
+    <legend>Рівень підготовки</legend>
+    <input type="radio" id="level_beginner" name="level" value="beginner">
+    <label for="level_beginner">Початківець</label>
+    
+    <input type="radio" id="level_intermediate" name="level" value="intermediate">
+    <label for="level_intermediate">Середній</label>
+    
+    <input type="radio" id="level_advanced" name="level" value="advanced">
+    <label for="level_advanced">Просунутий</label>
+</fieldset>
+<br>
+
+<fieldset>
+    <legend>Напрями інтересу</legend>
+    <input type="checkbox" id="interest_sorting" name="interest" value="sorting">
+    <label for="interest_sorting">Алгоритми сортування</label><br>
+    
+    <input type="checkbox" id="interest_search" name="interest" value="search">
+    <label for="interest_search">Алгоритми пошуку</label><br>
+    
+    <input type="checkbox" id="interest_graphs" name="interest" value="graphs">
+    <label for="interest_graphs">Графи</label><br>
+    
+    <input type="checkbox" id="interest_trees" name="interest" value="trees">
+    <label for="interest_trees">Дерева та структури даних</label><br><br>
+
+    <legend><strong>Додаткові дані:</strong></legend><br><br>
+    
+    <label for="experience">Короткий опис досвіду</label><br>
+    <textarea id="experience" name="experience" rows="5" cols="60" minlength="20" maxlength="500" placeholder="Розкажіть коротко про свій досвід у програмуванні..."></textarea>
+    <br><br>
+
+    <label for="portfolio">Файл із портфоліо (необов'язково)</label>
+    <input type="file" id="portfolio" name="portfolio" accept=".pdf,.doc,.docx" multiple>
+    <br><br>
+
+    <label for="os-choice">Основна операційна система для роботи:</label>
+    <input list="os-options" id="os-choice" name="os">
+    <datalist id="os-options">
+        <option value="Windows">
+        <option value="Linux">
+        <option value="macOS">
+    </datalist>
+    <br><br>
+
+    <label for="satisfaction">Оцініть свій інтерес до проєкту (від 1 до 10):</label>
+    <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" value="5">
+    <br><br>
+
+    <label for="profile-completion">Прогрес заповнення анкети:</label>
+    <progress id="profile-completion" max="100" value="75">75%</progress>
+    <br><br>
+
+    <label for="disk-space">Завантаженість навчального сервера:</label>
+    <meter id="disk-space" min="0" max="100" low="30" high="80" optimum="15" value="85">85%</meter><br><br>
+
+
+<br>
+
+<label for="stack">Технологічний стек</label>
+<select id="stack" name="stack" required>
+    <option value="">Оберіть технології</option>
+    <optgroup label="Мови програмування">
+        <option value="python">Python</option>
+        <option value="cpp">C++</option>
+    </optgroup>
+    <optgroup label="Клієнтські технології">
+        <option value="js">JavaScript</option>
+    </optgroup>
+</select>
+<br><br>
+
+</fieldset><br><br>
+
+<button type="submit" class="btn">Надіслати</button>
+<button type="reset" class="btn">Очистити форму</button>
+<button type="button" id="preview-btn" class="btn">Попередній перегляд</button>
+    </form>
+</main>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Порівняльна таблиця методологій розробки програмного забезпечення">
+    <meta name="author" content="Клочкова Крістіна">
+    <title>Порівняння методологій | Навчальний сайт</title>
+
+<link rel="icon" type="image/jpeg" href="img/favicon.ico.ico">
+
+<meta property="og:title" content="Порівняння методологій розробки ПО">
+<meta property="og:description" content="Порівняльний аналіз Agile, Waterfall та інших підходів.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://your-website.com">
+<meta property="og:url" content="https://your-website.com">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header>    
+<button type="button" type="submit" class="btn class=theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Переключити тему"> Змінити тему
+</button>
+
+    <script>
+    function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark-theme');
+  
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+    (function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark-theme');
+  }
+})();
+    </script>
+
+   <nav class="menu">
+            <ul>
+                <li class="menu__item">
+                    <a href="index.html" class="menu__link" aria-current="page">Головна</a>
+                </li>
+                <li class="menu__item">
+                    <a href="about.html" class="menu__link">Про напрям</a>
+                </li>
+                <li class="menu__item">
+                    <a href="pages/resources.html" class="menu__link">Ресурси</a>
+                </li>
+                <li class="menu__item">
+                    <a href="../comparison.html" class="menu__link">Порівняння методологій</a>
+                </li>
+                <li class="menu__item">
+                    <a href="gallery.html" class="menu__link">Медіагалерея</a>
+                </li>
+                <li class="menu__item">
+                    <a href="contacts.html" class="menu__link">Контакти</a>
+                </li>
+                <li class="menu__item">
+                    <a href="application.html" class="menu__link">Заява на участь у навчальному проєкті з алгоритмів</a>
+                </li>
+            </ul>
+        </nav>
+</header>
+
+    <main>  
+    <h1> Порівняння методологій розробки програмного забезпечення </h1>
+
+<table border="1">
+  <caption> <u>Порівняння п'яти методологій розробки ПO </u> </caption>
+  <thead>
+    <tr>
+        <th scope="col">Методологія</th>
+        <th scope="col">Рік появи</th>
+        <th scope="col">Гнучкість вимог</th>
+        <th scope="col">Залучення клієнта</th>
+        <th scope="col">Основна sfera застосування</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+        <th scope="row">Waterfall</th> 
+        <td><time datetime="1970">1970</time></td>
+        <td>Низька</td>
+        <td>Низьке</td>
+        <td>Проєкти з чіткими вимогами</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Agile</th>
+        <td><time datetime="2001">2001</time></td>
+        <td>Дуже висока</td>
+        <td>Постійне</td>
+        <td>Динамічні веб- та мобільні проєкти</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Scrum</th>
+        <td><time datetime="1995">1995</time></td>
+        <td>Висока</td>
+        <td>Високе</td>
+        <td>Командна розробка короткими ітераціями</td>
+    </tr>
+    <tr>
+        <th scope="row">Kanban</th>
+        <td><time datetime="2004">2004</time></td>
+        <td>Висока</td>
+        <td>Середнє</td>
+        <td>Підтримка та безперервний потік задач</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Spiral Model</th>
+        <td><time datetime="1986">1986</time></td>
+        <td>Середня</td>
+        <td>Середнє</td>
+        <td>Великі проєкти з високим рівнем ризику</td>
+    </tr>
+  </tbody>
+
+<tfoot>
+  <tr>
+        <td colspan="5"> <em>"Усього розглянуто 5 методологій"</em></td>
+  </tr>
+</tfoot>
+</table>
+<h2>Складність та ризики методологій розробки</h2>
+
+<table border="1">
+  <caption> Порівняльний аналіз Agile, Waterfall та Scrum </caption>
+  <thead>
+    <tr>
+        <th rowspan="2" scope="col">Методологія</th> 
+        <th colspan="2" scope="colgroup">Характеристики</th> 
+    </tr>
+
+    <tr>
+        <th scope="col">Складність впровадження</th>
+        <th scope="col">Рівень ризику</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+        <th scope="row">Agile</th>
+        <td>Середня</td>
+      <td>Низький</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Waterfall</th>
+        <td>Низька</td>
+      <td>Високий</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Scrum</th>
+        <td>Висока</td>
+      <td>Низький</td>
+    </tr>
+  </tbody>
+</table>
+</main>
+    <footer>
+        <address>
+            Клочкова Крістіна, група ІНЖ-21<br>
+            <a href="mailto:your.email@example.com">klochkova2607@gmail.com</a><br>
+            <a href="tel:+380671234567">+38 (067) 199-81-10</a>
+        </address>
+        <p>&copy; 2026 Клочкова Крістіна</p>
+    </footer>
+</body>
+</html>

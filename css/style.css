@@ -1,0 +1,333 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ===== Змінні ===== */
+:root {
+  --color-primary:       hsl(220, 61%, 18%);
+  --color-primary-light: hsl(219, 47%, 36%);
+  --color-primary-soft:  hsl(220, 28%, 65%);
+  --color-text:          hsl(0, 0%, 10%);
+  --color-text-muted:    hsl(0, 0%, 40%);
+  --color-surface:       hsl(0, 0%, 100%);
+  --color-accent:        hsl(233, 74%, 12%);
+  --color-card-bg:       var(--color-primary-soft);
+
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 1rem;    /* 16px */
+  --space-4: 1.5rem;  /* 24px */
+  --space-5: 2rem;    /* 32px */
+  --space-6: 3rem;    /* 48px */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-header: 200;
+  --z-modal: 300;
+}
+
+/* ===== Базові стилі ===== */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  counter-reset: section-counter;
+}
+
+main {
+  max-width: 65ch;
+}
+
+/* ===== Типографіка ===== */
+h1, h2, h3 {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+h1 { font-size: 2.441rem; line-height: 1.2; }
+h2 { font-size: 1.953rem; line-height: 1.2; }
+h3 { font-size: 1.563rem; line-height: 1.25; }
+h4 { font-size: 1.25rem;  line-height: 1.3; }
+h5 { font-size: 1rem;     line-height: 1.4; font-weight: 700; }
+h6 { font-size: 0.8rem;   line-height: 1.4; font-weight: 700; }
+
+h2::before {
+  counter-increment: section-counter;
+  content: "Розділ " counter(section-counter) ". ";
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+:is(h1, h2, h3):hover {
+  color: var(--color-primary-light);
+}
+
+/* ===== Навігація ===== */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.menu__item {
+  display: inline-block;
+  margin-right: var(--space-3);
+}
+
+.menu__link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu__link:not([aria-current="page"]) {
+  opacity: 0.85;
+}
+
+.menu__link:hover {
+  text-decoration: underline;
+  color: var(--color-primary-light);
+}
+
+.menu__link:focus-visible,
+.form__button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== Картки ===== */
+.card {
+  position: relative; 
+  background: var(--color-card-bg); 
+  padding: var(--space-3);
+  border: 1px solid #32465f;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 6%);
+  border-left: 4px solid var(--color-primary);
+  margin-bottom: var(--space-3);
+  transition: background-color 0.3s;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+  transform: translateY(-2px);
+}
+
+.card--featured {
+  border-left: 4px solid var(--color-primary);
+}
+
+.card:has(img) {
+  border: 2px solid var(--color-primary);
+}
+
+/* ===== Текст: посилання, цитати, код, списки ===== */
+main a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+main a:hover {
+  color: var(--color-primary-light);
+}
+
+a[href^="http"]::after {
+  content: " ↗";
+}
+
+a[href$=".pdf"]::after {
+  content: " (PDF)";
+}
+
+blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-3);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+code {
+  background-color: var(--color-primary-soft);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--space-1);
+  font-size: 0.9rem;
+}
+
+ul li:first-child {
+  font-weight: 600;
+}
+
+ul li:last-child {
+  color: var(--color-text);
+}
+
+li::marker {
+  color: var(--color-primary);
+}
+
+h2 + p {
+  font-weight: 600;
+}
+
+h2 ~ p {
+  color: var(--color-text);
+}
+
+figcaption {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+/* ===== Фони ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background:
+    linear-gradient(rgba(216, 223, 237, 0.9), rgba(132, 155, 189, 0.6)),
+    url("/img/photo-1.jpg.jpg") center / cover no-repeat;
+  color: #ffffff;
+  padding: 24px 16px;
+}
+
+header a {
+  color: #ffffff;
+}
+
+:where(header, footer) a {
+  color: var(--color-text-muted);
+}
+
+/* ===== Таблиця ===== */
+tbody tr:nth-child(even) {
+  background-color: var(--color-primary-soft);
+}
+
+/* ===== Форми ===== */
+.form__input,
+.form__textarea,
+.form__select,
+.form__button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.form__input[required] {
+  border-left: 3px solid var(--color-primary);
+}
+
+.form__input[type="email"] {
+  background-color: var(--color-primary-soft);
+}
+
+/* ===== Clamp ===== */
+h1 { font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.8rem); }
+h2 { font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.2rem); }
+h3 { font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem); }
+
+/* ===== Зміна теми ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: hsl(219 85% 75%); 
+    --color-text:    hsl(0 0% 95%);  
+    --color-card-bg: hsl(212, 40%, 31%);
+    --color-bg:      hsl(213, 71%, 8%);
+  }
+}
+
+html.dark-theme {
+  --color-primary: hsl(220, 23%, 95%);
+  --color-text:    hsl(0 0% 95%);
+  --color-card-bg: hsl(213, 44%, 14%);
+  --color-bg:      hsl(213, 71%, 8%);
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card {
+  background: var(--color-card-bg); 
+  padding: var(--space-3);
+  border-radius: var(--space-2);
+  margin-bottom: var(--space-3);
+  transition: background-color 0.3s;
+}
+
+.container {
+  max-width: 1100px;
+  margin-inline: auto;     
+  padding-inline: var(--space-3);
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block; 
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-primary-soft);
+  color: #252a4d;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.btn:active { 
+  transform: translateY(1px); 
+}
+
+.btn:focus-visible { 
+  outline: 3px solid var(--color-accent); 
+  outline-offset: 2px; 
+}
+
+input, textarea, select, button {
+  padding: var(--space-2);
+  border: 1px solid #b8c2cc;
+  border-radius: 6px;
+  height: 44px; 
+}
+
+textarea { 
+  height: auto; 
+}
+
+.back-to-top {
+    position: fixed;
+    right: var(--space-3);
+    bottom: var(--space-3);
+    z-index: var(--z-modal);
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
