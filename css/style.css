@@ -137,10 +137,9 @@ h2::before {
 }
 
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;           
-    gap: var(--space-4); 
-    width: 100%;
+     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
 }
 
 .card--featured {
