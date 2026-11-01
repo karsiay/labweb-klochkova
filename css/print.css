@@ -1,0 +1,53 @@
+@media print {
+
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+
+    body {
+        display: block;
+        background: white;
+        color: black;
+    }
+
+    .page {
+        display: block;
+        width: 100%;
+    }
+
+    .page__header,
+    .page__sidebar,
+    .menu,
+    .theme-toggle,
+    .back-to-top,
+    .btn {
+        display: none;
+    }
+
+    .page__main,
+    .container {
+        display: block;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .page__footer {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1, h2, h3, p {
+        color: black;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+    }
+
+    .card, blockquote {
+        break-inside: avoid;
+    }
+}

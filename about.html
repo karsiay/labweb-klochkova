@@ -3,45 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Навчальний сайт про методології розробки програмного забезпечення
-    ">
+    <meta name="description" content="Навчальний сайт про методології розробки програмного забезпечення">
     <meta name="author" content="Клочкова Крістіна">
-    <title>Про напрям - історія,основні поняття, застосування</title>
+    <title>Про напрям - історія, основні поняття, застосування</title>
 
-<link rel="icon" type="image/jpeg" href="img/favicon.ico.ico">
+    <link rel="icon" type="image/jpeg" href="img/favicon.ico.ico">
 
-<meta property="og:title" content="Методологія розробки програмного забезпечення">
-<meta property="og:description" content="Навчальний проєкт з дисципліни ВТВД.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://your-website.com">
-<meta property="og:url" content="https://your-website.com">
+    <meta property="og:title" content="Методологія розробки програмного забезпечення">
+    <meta property="og:description" content="Навчальний проєкт з дисципліни ВТВД.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://your-website.com">
+    <meta property="og:url" content="https://your-website.com">
 
-<link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="top"> 
-    <header>   
+<body id="top" class="page"> 
 
-    <button type="button" type="submit" class="btn class=theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Переключити тему"> Змінити тему
-    </button>
+    <header class="page__header">
+        <button type="button" class="btn theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Переключити тему">
+            Змінити тему
+        </button>
 
-    <script>
-    function toggleTheme() {
-    const root = document.documentElement;
-    const isDark = root.classList.toggle('dark-theme');
-  
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-}
+        <script>
+            function toggleTheme() {
+                const root = document.documentElement;
+                const isDark = root.classList.toggle('dark-theme');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            }
 
-    (function() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-    document.documentElement.classList.add('dark-theme');
-  }
-})();
-    </script>
+            (function() {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            })();
+        </script>
 
-     <nav class="menu">
+        <nav class="menu">
             <ul>
                 <li class="menu__item">
                     <a href="index.html" class="menu__link" aria-current="page">Головна</a>
@@ -66,56 +64,56 @@
                 </li>
             </ul>
         </nav>
- </header>
+    </header>
 
- <main>
-    <h1>Про напрям</h1>
+    <aside class="page__sidebar">
+        <h1>Про напрям</h1>
+        <h2>Зміст</h2>
+        <ul>
+            <li><a href="#history">Історія</a></li>
+            <li><a href="#concepts">Основні поняття</a></li>
+            <li><a href="#usage">Застосування</a></li>
+        </ul>
+    </aside>
 
-    <h2>Зміст</h2>
-    <ul>
-        <li><a href="#history">Історія</a></li>
-        <li><a href="#concepts">Основні поняття</a></li>
-        <li><a href="#usage">Застосування</a></li>
-    </ul>
+    <main class="page__main">
+        <section class="card-section"> 
+            <h2 id="history">Історія</h2> 
+            <p>Історія методологій починається з традиційної каскадної моделі (Waterfall), запропонованої у 1970-х роках. Вона вимагала суворої послідовності етапів: від збору вимог до тестування.</p>
+            
+            <article class="card">
+                <span class="badge">Історія</span>
+                <h3>Ранній період</h3> 
+                <p>Проте жорсткі рамки часто призводили до затримок, тому у 2001 році група розробників створила Agile-маніфест, що надав пріоритет гнучкості та людям.</p>
+                <a href="pages/resources.html" class="btn">Детальніше</a>
+            </article>
+        </section>
 
-    <section class="card-section"> 
-    <span class="badge">Історія</span>
-    <h2 id="history">Історія</h2> 
-    <p>Історія методологій починається з традиційної каскадної моделі (Waterfall), запропонованої у 1970-х роках. Вона вимагала суворої послідовності етапів: від збору вимог до тестування.</p>
-    
-    <article class="card">
-        <h3>Ранній період</h3> 
-        <p>Проте жорсткі рамки часто призводили до затримок, тому у 2001 році група розробників створила Agile-маніфест, що надав пріоритет гнучкості та людям.</p>
-        <a href="pages/resources.html" class="btn">Детальніше</a>
-    </article>
-</section>
+        <section>
+            <p><a href="#top" class="back-to-top">Нагору</a></p>
+        </section>
 
+        <section>  
+            <h2 id="concepts">Основні поняття</h2>
+            <p>Сучасна розробка базується на принципах прозорості, адаптивності та постійного покращення процесів всередині команди.</p>
 
-    <section>
-    <p><a href="#top" class="back-to-top">Нагору</a></p>
-    </section>
+            <blockquote>
+                <p>Найважливіший інгредієнт будь-якої методології — це не процеси, а люди та їхня взаємодія.</p>
+                <footer><cite>Гнучка розробка ПЗ</cite></footer>
+            </blockquote>
+            
+            <p><a href="#top" class="back-to-top">Нагору</a></p>
+        </section>
 
-    <section>  
-    <h2 id="concepts">Основні поняття</h2>
-    <p>Сучасна розробка базується на принципах прозорості, адаптивності та постійного покращення процесів всередині команди.</p>
+        <section> 
+            <h2 id="usage">Застосування</h2>
+            <p>Сьогодні Agile, Scrum та Kanban застосовуються не лише в IT-сфері, а й у маркетингу, менеджменті та будь-яких проектах з високим рівнем невизначеності.</p>
+            
+            <p><a href="#top" class="back-to-top">Нагору</a></p>
+        </section>
+    </main>
 
-    <blockquote>
-        <p>Найважливіший інгредієнт будь-якої методології — це не процеси, а люди та їхня взаємодія.</p>
-        <footer><cite>Гнучка розробка ПЗ</cite></footer>
-    </blockquote>
-    
-    <p><a href="#top" class="back-to-top">Нагору</a></p>
-    </section>
-
-    <section> 
-    <h2 id="usage">Застосування</h2>
-    <p>Сьогодні Agile, Scrum та Kanban застосовуються не лише в IT-сфері, а й у маркетингу, менеджменті та будь-яких проектах з високим рівнем невизначеності.</p>
-    
-    <p><a href="#top" class="back-to-top">Нагору</a></p>
-    </section>
-
- </main>
-    <footer>
+    <footer class="page__footer">
         <address>
             Клочкова Крістіна, група ІНЖ-21<br>
             <a href="mailto:your.email@example.com">klochkova2607@gmail.com</a><br>
@@ -123,5 +121,6 @@
         </address>
         <p>&copy; 2026 Клочкова Крістіна</p>
     </footer>
+
 </body>
 </html>
