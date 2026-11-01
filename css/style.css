@@ -217,7 +217,7 @@ header {
   z-index: var(--z-header);
   background:
     linear-gradient(rgba(216, 223, 237, 0.9), rgba(132, 155, 189, 0.6)),
-    url("/img/photo-1.jpg.jpg") center / cover no-repeat;
+    url("../img/photo-1.jpg.jpg") center / cover no-repeat;
   color: #ffffff;
   padding: 24px 16px;
   display: flex;
