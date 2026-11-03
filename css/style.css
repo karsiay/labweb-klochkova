@@ -1,3 +1,4 @@
+/* ===== Базові налаштування ===== */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -15,11 +16,27 @@
   --color-primary:       hsl(220, 61%, 18%);
   --color-primary-light: hsl(219, 47%, 36%);
   --color-primary-soft:  hsl(220, 28%, 65%);
+  --color-primary-item:  hsl(220, 15%, 84%);
   --color-text:          hsl(0, 0%, 10%);
   --color-text-muted:    hsl(0, 0%, 40%);
   --color-surface:       hsl(0, 0%, 100%);
   --color-accent:        hsl(233, 74%, 12%);
   --color-card-bg:       var(--color-primary-soft);
+  --color-white: #ffffff;
+  --color-button-text: #252a4d;
+  --color-border: #b8c2cc;
+  --color-border-dark: #32465f;
+  --color-border-muted: #cccccc;
+  --color-table-header: #ffffff;
+
+  --font-size-1: 0.75rem;
+  --font-size-2: 0.8rem;
+  --font-size-3: 0.85rem;
+  --font-size-4: 0.9rem;
+  --font-size-5: 1rem;
+  --font-size-6: 1.25rem;
+  --font-size-7: 1.563rem;
+  --font-size-8: 1.953rem;
 
   --space-1: 0.25rem; /* 4px */
   --space-2: 0.5rem;  /* 8px */
@@ -27,6 +44,36 @@
   --space-4: 1.5rem;  /* 24px */
   --space-5: 2rem;    /* 32px */
   --space-6: 3rem;    /* 48px */
+
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-3);
+  --space-lg: var(--space-4);
+  --space-xl: var(--space-5);
+  --space-2xl: var(--space-6);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 10%);
+  --shadow-md: 0 2px 6px rgb(0 0 0 / 6%);
+  --shadow-lg: 0 6px 16px rgb(0 0 0 / 12%);
+
+  --border-width: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+  --border-width-accent: 4px;
+  --outline-width: 3px;
+
+  --content-width: 1100px;
+  --sidebar-width: 240px;
+  --sidebar-width-large: 280px;
+  --card-min-width: 280px;
+  --image-height: 200px;
+  --control-height: 44px;
+  --stats-min-width: 160px;
 
   --z-base: 1;
   --z-dropdown: 100;
@@ -36,15 +83,16 @@
 
 /* ===== Базові стилі ===== */
 body {
-  font-family: "Inter", Roboto, Arial, sans-serif; 
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-surface);
-  counter-reset: section-counter;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Inter", Roboto, Arial, sans-serif;
+    font-size: var(--font-size-5);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    counter-reset: section-counter;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 main {
@@ -60,11 +108,32 @@ h1, h2, h3 {
 }
 
 h1 { font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem); }
-h2 { font-size: 1.953rem; line-height: 1.2; }
+
+h2 { font-size: 1.953rem; 
+    line-height: 1.2; 
+    margin-top: var(--space-xl); 
+    margin-bottom: var(--space-sm); }
+
 h3 { font-size: 1.563rem; line-height: 1.25; }
+
 h4 { font-size: 1.25rem;  line-height: 1.3; }
-h5 { font-size: 1rem;     line-height: 1.4; font-weight: 700; }
-h6 { font-size: 0.8rem;   line-height: 1.4; font-weight: 700; }
+
+h5 { font-size: 1rem;     
+    line-height: 1.4; 
+    font-weight: 700; }
+
+h6 { font-size: 0.8rem;   
+    line-height: 1.4; 
+    font-weight: 700; }
+
+p  { font-size: 1rem; }
+
+.btn--primary {               
+    background: var(--color-accent);
+    color:var(--color-white);
+}
+
+.field label { margin-bottom: var(--space-xs); }
 
 h2::before {
   counter-increment: section-counter;
@@ -80,15 +149,15 @@ h2::before {
 /* ===== Навігація ===== */
 .menu {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: block;
   display: flex;
   gap: var(--space-md);
-  list-style: none; margin: 0; padding: 0;
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
 }
-.menu__contacts { margin-left: auto; } 
 
+.menu__contacts { margin-left: auto; } 
 
 .menu__item {
   display: inline-block;
@@ -118,21 +187,23 @@ h2::before {
 
 /* ===== Картки ===== */
 .card {
-    position: relative; 
-    background: var(--color-card-bg); 
-    padding: var(--space-3);
-    border: 1px solid #32465f;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 6%);
-    border-left: 4px solid var(--color-primary);
-    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.3s;
-    flex: 1 1 280px;      
+    position: relative;
     display: flex;
+    flex: 1 1 var(--card-min-width);
     flex-direction: column;
+    background: var(--color-card-bg);
+    padding: var(--space-md);
+    border: var(--border-width) solid var(--color-border-dark);
+    border-left: var(--border-width-accent) solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.3s;
 }
 
+.section + .section { margin-top: var(--space-2xl); } 
+
 .card:hover {
-  box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+  box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }
 
@@ -145,11 +216,11 @@ h2::before {
 }
 
 .card--featured {
-  border-left: 4px solid var(--color-primary);
+  border-left: var(--border-width-accent) solid var(--color-primary);
 }
 
 .card:has(img) {
-  border: 2px solid var(--color-primary);
+  border: var(--border-width-medium) solid var(--color-primary);
 }
 
 /* ===== Текст: посилання, цитати, код, списки ===== */
@@ -171,7 +242,7 @@ a[href$=".pdf"]::after {
 }
 
 blockquote {
-  border-left: 4px solid var(--color-primary);
+  border-left: var(--border-width-accent) solid var(--color-primary);
   padding-left: var(--space-3);
   color: var(--color-text-muted);
   font-style: italic;
@@ -181,7 +252,7 @@ code {
   background-color: var(--color-primary-soft);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--space-1);
-  font-size: 0.9rem;
+  font-size: var(--font-size-4);
 }
 
 ul li:first-child {
@@ -207,20 +278,20 @@ h2 ~ p {
 figcaption {
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.85rem;
+  font-size: var(--font-size-3);
 }
 
 /* ===== Фони ===== */
 header {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-header);
-  background:
-    linear-gradient(rgba(216, 223, 237, 0.9), rgba(132, 155, 189, 0.6)),
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    background:
+        linear-gradient(rgba(216, 223, 237, 0.9), rgba(132, 155, 189, 0.6)),
     url("../img/photo-1.jpg.jpg") center / cover no-repeat;
-  color: #ffffff;
-  padding: 24px 16px;
-  display: flex;
+    color: var(--color-white);
+    padding: var(--space-lg) var(--space-md);
+    display: flex;
     justify-content: space-between;   
     align-items: center;              
     flex-wrap: wrap;                  
@@ -228,7 +299,7 @@ header {
 }
 
 header a {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 :where(header, footer) a {
@@ -238,6 +309,25 @@ header a {
 /* ===== Таблиця ===== */
 tbody tr:nth-child(even) {
   background-color: var(--color-primary-soft);
+}
+
+.table-container {
+    max-height: 180px; 
+    overflow-y: auto;
+    border: 1var(--border-width) solid var(--color-border-muted);
+    margin: var(--space-3) 0;
+    border-radius: var(--radius-md);
+}
+
+.table-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: var(--color-table-header);
 }
 
 /* ===== Форми ===== */
@@ -250,13 +340,23 @@ tbody tr:nth-child(even) {
 }
 
 .form__input[required] {
-  border-left: 3px solid var(--color-primary);
+  border-left: var(--border-width-thick) solid var(--color-primary);
 }
 
 .form__input[type="email"] {
   background-color: var(--color-primary-soft);
 }
 
+input, textarea, select, button {
+  padding: var(--space-2);
+  border: 1px solid #b8c2cc;
+  border-radius: 6px;
+  height: 44px; 
+}
+
+textarea { 
+  height: auto; 
+}
 /* ===== Clamp ===== */
 h1 { font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.8rem); }
 h2 { font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.2rem); }
@@ -279,18 +379,10 @@ html.dark-theme {
   --color-bg:      hsl(213, 71%, 8%);
 }
 
-body {
-  font-family: "Inter", Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  transition: background-color 0.3s, color 0.3s;
-}
-
+/* ===== Зображення в картках ===== */
 .card img {
     width: 100%;           
-    height: 200px;        
+    height: var(--image-height);        
     object-fit: cover;   
     display: block;
 }
@@ -305,6 +397,8 @@ body {
     margin-inline: auto;
     padding-inline: var(--space-3);
 }
+
+/* ===== Позначки та кнопки ===== */
 .badge {
   position: absolute;
   top: var(--space-2);
@@ -320,9 +414,9 @@ body {
   display: inline-block; 
   padding: var(--space-2) var(--space-3);
   background: var(--color-primary-soft);
-  color: #252a4d;
+  color: var(--color-button-text);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   text-decoration: none;
   transition: transform 0.15s ease;
 }
@@ -336,29 +430,20 @@ body {
   outline-offset: 2px; 
 }
 
-input, textarea, select, button {
-  padding: var(--space-2);
-  border: 1px solid #b8c2cc;
-  border-radius: 6px;
-  height: 44px; 
-}
-
-textarea { 
-  height: auto; 
-}
-
+/* ===== Кнопка повернення нагору ===== */
 .back-to-top {
     position: fixed;
     right: var(--space-3);
     bottom: var(--space-3);
     z-index: var(--z-modal);
     background: var(--color-primary);
-    color: #ffffff;
+    color: var(--color-white);
     padding: var(--space-2) var(--space-3);
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     text-decoration: none;
 }
 
+/* ===== Доступність ===== */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -374,30 +459,13 @@ textarea {
   white-space: nowrap; border: 0;
 }
 
-.table-container {
-    max-height: 180px; 
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    margin: var(--space-3) 0;
-    border-radius: 6px;
-}
-
-.table-scroll {
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-thead th {
-  position: sticky;
-  top: 0;
-  background: #fff;
-}
-
+/* ===== Медіа-блок ===== */
 .media {
     display: flex;
     gap: var(--space-sm);
     align-items: flex-start;    
 }
+
 .media__icon { flex-shrink: 0; }  
 .media__body { margin: 0; }
 
@@ -434,16 +502,47 @@ thead th {
 .page__main    { grid-area: main;    }
 .page__footer  { grid-area: footer;  }
 
+/* ===== Статистичні блоки ===== */
 .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--stats-min-width), 1fr));
     gap: var(--space-3);
     place-items: center;         
     text-align: center;
 }
 .stats__item {
-    background: var(--color-primary-soft);
+    background: var(--color-primary-item);
     padding: var(--space-3);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     font-weight: 700;
+}
+
+/* =====  12-колонкова сітка ===== */
+.page-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    gap: var(--space-lg);                  
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding-inline: var(--space-md);         
+}
+
+.span-12 {
+    grid-column: span 12;
+}
+
+.span-8 {
+    grid-column: span 8;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+@media (max-width: 768px) {
+    .span-12,
+    .span-8,
+    .span-4 {
+        grid-column: span 12;
+    }
 }

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Style Guide</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Style Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { padding: 2rem; max-width: 900px; margin: 0 auto; }
+        .sg-item { margin-bottom: 2.5rem; padding: 1.5rem; border: 1px solid #ccc; border-radius: 8px; background: #fff; }
+        .sg-preview { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; padding: 1rem; background: #f5f7fa; border-radius: 6px; }
+        pre { background: #1e293b; color: #fff; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+        .color-box { display: inline-block; width: 80px; height: 50px; border-radius: 4px; margin-right: 10px; border: 1px solid #ddd; vertical-align: middle; }
+    </style>
+</head>
+<body>
+
+    <h1>Довідник стилів (Style Guide)</h1>
+    <p>Простий довідник для перевірки основних елементів вашого проєкту.</p>
+
+    <!-- 1. КОЛЬОРИ -->
+    <section class="sg-item">
+        <h3>Основні кольори</h3>
+        <div class="sg-preview" style="flex-direction: column; align-items: flex-start;">
+            <div><span class="color-box" style="background: var(--color-primary);"></span> <code>--color-primary</code></div>
+            <div><span class="color-box" style="background: var(--color-accent);"></span> <code>--color-accent</code></div>
+            <div><span class="color-box" style="background: var(--color-primary-soft);"></span> <code>--color-primary-soft</code></div>
+        </div>
+    </section>
+
+    <!-- 2. КНОПКИ -->
+    <section class="sg-item">
+        <h3>Кнопки (.btn)</h3>
+        <div class="sg-preview">
+            <button class="btn">Звичайна</button>
+            <button class="btn btn--primary">Головна</button>
+            <button class="btn" disabled style="opacity: 0.6; cursor: not-allowed;">Вимкнена</button>
+        </div>
+        <pre><code>&lt;button class="btn btn--primary"&gt;Головна&lt;/button&gt;</code></pre>
+    </section>
+
+    <!-- 3. ФОРМИ -->
+    <section class="sg-item">
+        <h3>Поля введення</h3>
+        <div class="sg-preview" style="flex-direction: column; align-items: stretch;">
+            <input type="text" class="form__input" placeholder="Звичайне поле...">
+        </div>
+        <pre><code>&lt;input type="text" class="form__input" placeholder="Текст..."&gt;</code></pre>
+    </section>
+
+    <!-- 4. КАРТКИ -->
+    <section class="sg-item">
+        <h3>Картка (.card)</h3>
+        <div class="sg-preview">
+            <div class="card" style="max-width: 280px;">
+                <h4>Заголовок</h4>
+                <p>Приклад тексту всередині картки.</p>
+                <a href="#" class="btn btn--primary">Дія</a>
+            </div>
+        </div>
+        <pre><code>&lt;div class="card"&gt;
+    &lt;h4&gt;Заголовок&lt;/h4&gt;
+    &lt;p&gt;Текст картки.&lt;/p&gt;
+    &lt;a href="#" class="btn btn--primary"&gt;Дія&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <section class="sg-item">
+        <h3>Заголовки (H1 – H6)</h3>
+        <div class="sg-preview">
+            <h1>Головний заголовок (H1)</h1>
+            <h2>Заголовок другого рівня (H2)</h2>
+            <h3>Заголовок третього рівня (H3)</h3>
+            <h4>Заголовок четвертого рівня (H4)</h4>
+            <h5>Заголовок п'ятого рівня (H5)</h5>
+            <h6>Заголовок шостого рівня (H6)</h6>
+        </div>
+        <pre><code>&lt;h1&gt;Головний заголовок&lt;/h1&gt;
+&lt;h2&gt;Заголовок другого рівня&lt;/h2&gt;
+&lt;h3&gt;Заголовок третього рівня&lt;/h3&gt;
+&lt;h4&gt;Заголовок четвертого рівня&lt;/h4&gt;
+&lt;h5&gt;Заголовок п'ятого рівня&lt;/h5&gt;
+&lt;h6&gt;Заголовок шостого рівня&lt;/h6&gt;</code></pre>
+    </section>
+
+    <!-- ТЕКСТ ТA ПАРАГРАФИ -->
+    <section class="sg-item">
+        <h3>Основний текст і параграфи</h3>
+        <div class="sg-preview">
+            <p>Це звичайний параграф тексту (p), який використовує базовий розмір шрифту та міжрядковий інтервал із вашого файлу стилів.</p>
+            <p><strong>Жирний текст</strong> та звичайний текст усередині абзацу.</p>
+        </div>
+        <pre><code>&lt;p&gt;Це звичайний параграф тексту.&lt;/p&gt;</code></pre>
+    </section>
+
+    <!-- ПОСИЛАННЯ -->
+    <section class="sg-item">
+        <h3>Посилання та специфічні індикатори</h3>
+        <div class="sg-preview">
+            <p>Звичайне посилання у тексті: <a href="#">посилання на сторінку</a>.</p>
+            <p>Посилання на зовнішній ресурс (автоматично додає стрілочку через CSS): <a href="https://google.com">Зовнішній сайт</a>.</p>
+            <p>Посилання на PDF-файл (автоматично додає позначку): <a href="document.pdf">Звіт за рік</a>.</p>
+        </div>
+        <pre><code>&lt;a href="#"&gt;посилання на сторінку&lt;/a&gt;
+&lt;a href="https://example.com"&gt;Зовнішній сайт&lt;/a&gt;
+&lt;a href="document.pdf"&gt;Звіт за рік&lt;/a&gt;</code></pre>
+    </section>
+
+    <!-- ЦИТАТИ -->
+    <section class="sg-item">
+        <h3>Цитати (Blockquote)</h3>
+        <div class="sg-preview">
+            <blockquote>
+                «Довідник стилів — це засіб самоперевірки. Коли всі елементи зібрані поруч, розбіжності одразу видно.»
+            </blockquote>
+        </div>
+        <pre><code>&lt;blockquote&gt;
+    «Довідник стилів — це засіб самоперевірки...»
+&lt;/blockquote&gt;</code></pre>
+    </section>
+
+</body>
+</html>
